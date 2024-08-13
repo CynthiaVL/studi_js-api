@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Fleur météo</title>
+</head>
+<body>
+    <form class="js-search-form" >
+        <label>
+            <p>Tapez le nom d'une ville :</p>
+            <input class="js-search-input" type="text">
+            <ul class="js-search-suggestions" style="border: 1px solid #ccc; max-width: 300px; display: none;"></ul>
+            <div class="js-search-error-message" style="color: red;"></div>
+            <button class="js-search-button" type="submit">Valider</button>
+        </label>
+    </form>
+    <script type="module" src="app.js"></script>
+</body>
+</html>

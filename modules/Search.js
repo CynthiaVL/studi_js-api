@@ -9,6 +9,7 @@ OK - Auto-completion : Proposer une sugestion en fonction des lettres taper par 
 - Sauvegarder les dernières recherches
 */
 
+import { Weather } from "./Weather.js";
 
 class Search 
 {
@@ -29,9 +30,12 @@ class Search
     };
 
     watchUserInput(){
+        // Ecoute de l'input pour proposer des suggestions adéquates.
         this.input.addEventListener('input', () => {
             this.showSuggestions()
         })
+
+        // Récupère la longitude et la latitude après envoie de la ville
         this.form.addEventListener('submit', (event) => {
             event.preventDefault();
             this.getLatAndLong();
@@ -81,17 +85,18 @@ class Search
     // Récupère la latitude et la longitude de la ville demandée
     getLatAndLong() {
         const cityName = this.input.value
-        // 1 : Récupérer objet correspondant à la ville 
+        //Récupérer objet correspondant à la ville 
         const cityData = this.getCityData(cityName);
         if (cityData.name != "" ) {
             // Si oui => je récupère lat et long
-            this.lat = cityData.lat;
-            console.log(this.lat)
-            this.long = cityData.lng;
-            console.log(this.long)
+            const lat = cityData.lat;
+            const long = cityData.lng;
             this.messageError.textContent = "";
+
+    // Envoie de lat et long dans la class Wind
+            new Weather(lat, long);
         } else {
-            // 3 : Si non => j'envoie un message d'erreur
+            // Si non => j'envoie un message d'erreur
             this.messageError.textContent = 'La ville demandée n\'a pas été trouvée. \n merci de vérifier l\'ortographe ou de choisir une autre ville';
         }
     }
@@ -109,13 +114,12 @@ class Search
         }
     }
 
-    // Récupère la ville
+    // Récupère le nom la ville
     getCityData(cityName) {
         const cityNameLower = cityName.toLowerCase();
         let cityData = this.cities.find(
             (cityObject) => cityObject.city.toLowerCase() === cityNameLower
         );
-        console.log(cityData);
         return cityData;
     }
 }

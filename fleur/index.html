@@ -7,13 +7,15 @@
     <title>Fleur météo</title>
 </head>
 <body>
+    <div class="js-canvas"></div>
+
     <form class="js-search-form" >
-        <label>
-            <p>Tapez le nom d'une ville :</p>
+        <label class="js-label-form">
+            <p><strong>Entrez un nom de ville :</strong></p>
             <input class="js-search-input" type="text">
-            <ul class="js-search-suggestions" style="border: 1px solid #ccc; max-width: 300px; display: none;"></ul>
+            <ul class="js-search-suggestions" style="border: 1px solid rgb(40,40,169); max-width: 100px; display: none;"></ul>
             <div class="js-search-error-message" style="color: red;"></div>
-            <button class="js-search-button" type="submit">Valider</button>
+            <button class="js-search-button" type="submit"><strong>Valider</strong></button>
         </label>
     </form>
     <script type="module" src="app.js"></script>

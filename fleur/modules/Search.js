@@ -44,7 +44,7 @@ class Search
 
     // Récupère les objects du fichier json
     getCities() {
-        fetch('../data/france-cities.json')
+        fetch('../fleur/data/france-cities.json')
             .then(response => response.json())
             .then(data => {
                 this.cities = data;

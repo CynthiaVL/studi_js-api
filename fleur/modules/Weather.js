@@ -16,7 +16,6 @@ class Weather {
     init(){
         this.builUrl();
         this.getWindData();
-        console.log(this.lat, this.long)
     }
 
     builUrl() {
@@ -34,7 +33,7 @@ class Weather {
             .then(response => response.json())
             .then((data) => {
                 console.log('data', data)
-            })
+            });
     }
 
 }

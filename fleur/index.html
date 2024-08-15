@@ -11,13 +11,22 @@
 
     <form class="js-search-form" >
         <label class="js-label-form">
-            <p><strong>Entrez un nom de ville :</strong></p>
+            <h3><strong>Entrez un nom de ville :</strong></h3>
             <input class="js-search-input" type="text">
             <ul class="js-search-suggestions" style="border: 1px solid rgb(40,40,169); max-width: 100px; display: none;"></ul>
             <div class="js-search-error-message" style="color: red;"></div>
             <button class="js-search-button" type="submit"><strong>Valider</strong></button>
         </label>
     </form>
+
+    <script type="importmap">
+        {
+          "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.167.1/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.167.1/examples/jsm/"
+          }
+        }
+    </script>      
     <script type="module" src="app.js"></script>
 </body>
 </html>

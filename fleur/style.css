@@ -8,9 +8,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid rgb(40, 40, 169);
+    border: 10px inset rgb(40, 40, 169);
     background-color: skyblue;
     padding: 30px;
+    position: relative;
+    z-index: 1;
 }
 
 .js-search-input {
@@ -49,4 +51,5 @@
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 0;
 }
